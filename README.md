@@ -2,14 +2,14 @@
 
 This project demonstrates two different calendar implementations:
 
-## 1. Custom Calendar Implementation
+## 1. React Big Calendar Implementation
 - Path: `/first`
-- A custom-built calendar with event overlap handling
-
-
-## 2. React Big Calendar Implementation
-- Path: `/second`
 - Built using react-big-calendar library
+
+
+## 2. Custom Calendar Implementation
+- Path: `/second`
+- A custom-built calendar with event overlap handling
 
 
 ## Getting Started

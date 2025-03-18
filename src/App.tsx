@@ -10,8 +10,8 @@ const App: React.FC = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/first' element={<Home />} />
-          <Route path='/second' element={<SecondCal />} />
+          <Route path='/first' element={<SecondCal />} />
+          <Route path='/second' element={<Home />} />
         </Routes>
       </BrowserRouter>
 
