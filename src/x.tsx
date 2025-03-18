@@ -24,7 +24,7 @@ export default function Home() {
     const timeSlots = Array.from({ length: 13 }, (_, i) => i + 9) // 8 AM to 4 PM
 
     // Helper function to calculate event position and height
-    const calculateEventStyle = (start, end) => {
+    const calculateEventStyle = (start: number, end: number) => {
         const startHours = start / 60  // Convert minutes to hours from 9 AM
         const endHours = end / 60
         const top = startHours * 80    // 80px per hour

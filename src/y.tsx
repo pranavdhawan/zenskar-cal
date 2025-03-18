@@ -4,7 +4,7 @@ import moment from 'moment'
 
 const localizer = momentLocalizer(moment)
 
-const CustomToolbar = ({ label }: any) => (
+const CustomToolbar = ({ label }: { label: string }) => (
     <div className="flex justify-between items-center p-4 bg-white border-b">
         <div className="text-xl font-semibold">{label}</div>
     </div>
