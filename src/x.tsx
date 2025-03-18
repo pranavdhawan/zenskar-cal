@@ -122,7 +122,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* Week View */}
+
                     <div className="flex-1 overflow-auto p-4">
                         <div className="bg-white/20 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl h-fit">
 
