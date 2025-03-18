@@ -10,7 +10,7 @@ const CustomToolbar = ({ label }: any) => (
     </div>
 )
 
-const MyCalendar = () => {
+const SecondCal = () => {
 
     const rawEvents = [
         { title: "Sample item 1", start: 10, end: 90 },
@@ -61,4 +61,4 @@ const MyCalendar = () => {
     )
 }
 
-export default MyCalendar
+export default SecondCal
