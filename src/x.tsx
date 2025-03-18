@@ -103,75 +103,66 @@ export default function Home() {
     console.log(eventLayouts)
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden bg-gray-700">
+        <div className="flex justify-center items-center ">
+            <div className="w-[620px] h-[720px] flex flex-col my-8">
 
-            <header
-                className={`absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-8 py-6`}
-            >
-                <div className="flex items-center gap-4">
-                    <span className="text-2xl font-semibold text-white drop-shadow-lg">Zenskar Calendar</span>
-                </div>
-            </header>
 
-            <main className="relative h-screen w-full pt-20 flex">
-                <div className="flex-1 flex flex-col">
-                    <div className="flex items-center justify-between p-4 border-b border-white/20">
-                        <div className="flex items-center gap-4">
-                            <span className="px-4 py-2 text-white bg-blue-500 rounded-md">Today</span>
-                            <h2 className="text-xl font-semibold text-white">March 17</h2>
-                        </div>
+                <header className="flex items-center justify-between px-4 py-3 border-b border-white/20">
+                    <div className="flex items-center gap-4">
+                        <span className="text-2xl font-semibold text-black drop-shadow-lg">Zenskar Calendar</span>
                     </div>
+                </header>
 
+                <main className="flex-1 p-[10px]">
+                    <div className="h-full bg-slate-700/50 backdrop-blur-sm rounded-xl border border-slate-600 shadow-2xl">
+                        <div className="h-full grid grid-cols-8">
 
-                    <div className="flex-1 overflow-auto p-4">
-                        <div className="bg-white/20 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl h-fit">
+                            <div className="text-white/70">
+                                {timeSlots.map((time, i) => (
+                                    <div key={i} className="h-20 border-b border-white/10 pr-2 text-right text-xs">
+                                        {time > 12 ? `${time - 12} PM` : `${time} AM`}
+                                    </div>
+                                ))}
+                            </div>
 
-                            <div className="grid grid-cols-8">
+                            {/* cols */}
+                            <div className="col-span-7 border-l border-white/20 relative">
+                                {timeSlots.map((_, timeIndex) => (
+                                    <div key={timeIndex} className="h-20 border-b border-white/10"></div>
+                                ))}
 
-                                <div className="text-white/70">
-                                    {timeSlots.map((time, i) => (
-                                        <div key={i} className="h-20 border-b border-white/10 pr-2 text-right text-xs">
-                                            {time > 12 ? `${time - 12} PM` : `${time} AM`}
-                                        </div>
-                                    ))}
-                                </div>
+                                {events.map((event, i) => {
 
-                                {/* cols */}
-                                <div className="col-span-7 border-l border-white/20 relative">
-                                    {timeSlots.map((_, timeIndex) => (
-                                        <div key={timeIndex} className="h-20 border-b border-white/10"></div>
-                                    ))}
-
-                                    {events.map((event, i) => {
-
-                                        const eventStyle = calculateEventStyle(event.start, event.end)
-                                        const randomColor = eventColors[Math.floor(Math.random() * eventColors.length)]
-                                        const layout = eventLayouts.get(event)
-                                        return (
-                                            <div
-                                                key={i}
-                                                className={`absolute ${randomColor} rounded-md p-2 text-white text-xs shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:translate-y-[-2px] hover:shadow-lg`}
-                                                style={{
-                                                    ...eventStyle,
-                                                    left: `${(layout.column * (100 / layout.totalColumns))}%`,
-                                                    width: `${100 / layout.totalColumns}%`,
-                                                    right: 'auto',
-                                                }}
-                                            >
-                                                <div className="font-medium">{event.title}</div>
-                                                <div className="opacity-80 text-[10px] mt-1">
-                                                    {`${Math.floor(event.start / 60) + 9}:${String(event.start % 60).padStart(2, '0')} - ${Math.floor(event.end / 60) + 9}:${String(event.end % 60).padStart(2, '0')}`}
-                                                </div>
+                                    const eventStyle = calculateEventStyle(event.start, event.end)
+                                    const randomColor = eventColors[Math.floor(Math.random() * eventColors.length)]
+                                    const layout = eventLayouts.get(event)
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`absolute ${randomColor} rounded-md p-2 text-white text-xs shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:translate-y-[-2px] hover:shadow-lg`}
+                                            style={{
+                                                ...eventStyle,
+                                                left: `${(layout.column * (100 / layout.totalColumns))}%`,
+                                                width: `${100 / layout.totalColumns}%`,
+                                                right: 'auto',
+                                            }}
+                                        >
+                                            <div className="font-medium">{event.title}</div>
+                                            <div className="opacity-80 text-[10px] mt-1">
+                                                {`${Math.floor(event.start / 60) + 9}:${String(event.start % 60).padStart(2, '0')} - ${Math.floor(event.end / 60) + 9}:${String(event.end % 60).padStart(2, '0')}`}
                                             </div>
-                                        )
-                                    })}
-                                </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
+                        {/* </div>
                     </div>
-                </div>
+                </div> */}
+                    </div>
+                </main>
+            </div>
 
-            </main>
         </div>
     )
 }
