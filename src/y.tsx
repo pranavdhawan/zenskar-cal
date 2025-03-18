@@ -39,24 +39,30 @@ const SecondCal = () => {
     }))
 
     return (
-        <div className="h-screen p-4 bg-gray-50">
-            <Calendar
-                localizer={localizer}
-                dayLayoutAlgorithm='no-overlap'
-                events={events}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 'calc(100vh - 2rem)' }} // read more
-                defaultView={Views.DAY}
-                step={30}
-                min={moment().hour(9).minute(0).toDate()}
-                max={moment().hour(22).minute(0).toDate()}
-                // timeslots={2}
-                components={{
-                    toolbar: CustomToolbar,
-                }}
-                className="bg-white shadow-lg rounded-lg"
-            />
+
+        // The events must be displayed within a 620px wide
+        //  container(600px for content and 10px of padding on the left and right)
+        // and 720px tall, representing a 9 AM to 9 PM schedule.
+        <div className='flex justify-center items-center min-h-screen bg-gray-50'>
+            <div className="w-[620px] h-[720px] p-[10px]">
+                <Calendar
+                    localizer={localizer}
+                    dayLayoutAlgorithm='no-overlap'
+                    events={events}
+                    startAccessor="start"
+                    endAccessor="end"
+                    style={{ height: '100%' }}
+                    defaultView={Views.DAY}
+                    step={30}
+                    min={moment().hour(9).minute(0).toDate()}
+                    max={moment().hour(22).minute(0).toDate()}
+                    // timeslots={2}
+                    components={{
+                        toolbar: CustomToolbar,
+                    }}
+                    className="bg-white shadow-lg rounded-lg"
+                />
+            </div>
         </div>
     )
 }
