@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/first' element={<Home />} />
-          <Route path='second' element={<SecondCal />} />
+          <Route path='/second' element={<SecondCal />} />
         </Routes>
       </BrowserRouter>
 
