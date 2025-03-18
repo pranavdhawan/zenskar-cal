@@ -1,5 +1,7 @@
 # Zenskar Calendar Demo
 
+Deployed at: [`zenskar-cal.vercel.app`](zenskar-cal.vercel.app)
+
 This project demonstrates two different calendar implementations:
 
 ## 1. React Big Calendar Implementation
