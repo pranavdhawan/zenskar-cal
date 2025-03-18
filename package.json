@@ -21,7 +21,8 @@
     "react-big-calendar": "^1.18.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.3.0",
-    "tailwind": "^2.3.1"
+    "tailwind": "^2.3.1",
+    "vercel": "^41.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -38,8 +39,5 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  },
-  "resolutions": {
-    "rollup": "npm:@rollup/wasm-node@*"
   }
 }
