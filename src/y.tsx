@@ -43,6 +43,7 @@ const SecondCal = () => {
         // The events must be displayed within a 620px wide
         //  container(600px for content and 10px of padding on the left and right)
         // and 720px tall, representing a 9 AM to 9 PM schedule.
+
         <div className='flex justify-center items-center min-h-screen bg-gray-50'>
             <div className="w-[620px] h-[720px] p-[10px]">
                 <Calendar
